@@ -37,7 +37,19 @@ async def self(interaction: discord.Interaction):
 async def self(interaction: discord.Interaction, user: discord.User):
     roasts = ['puts the milk in before the cereal',
               'sleeps with socks on',
-              'smells kinda funny']
+              'smells kinda funny',
+              'cant read',
+              'cant ride a bike',
+              'eats soup with a fork',
+              'cant drive',
+              'peaked in middle school',
+              'has a face literally no one could love',
+              'looks like they arent allowed near school zones',
+              'has cooties',
+              'cant tie their own shoes',
+              'is a fringe friend',
+              'has food allergies (loser)',
+              'cant count past 5']
     phrase = random.choice(roasts)
     await interaction.response.send_message(f'{user} {phrase}')
 
