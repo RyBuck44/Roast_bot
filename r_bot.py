@@ -22,3 +22,9 @@ class db(discord.Client):
 
 bot = db()
 tree = app_commands.CommandTree(bot)
+
+
+@tree.command(name='help', description='provides information about bot function', guild=discord.Object(id=1100490695309017168))
+async def self(interaction: discord.Interaction):
+    await interaction.response.send_message('Select user in server that you would like the bot to roast.\n'
+                                            'A randomly selected phrase will be displayed along with the users name.')
