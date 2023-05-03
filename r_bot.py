@@ -15,7 +15,7 @@ class db(discord.Client):
         self.synced = False
 
     async def on_ready(self):
-        await tree.sync(guild=discord.Object(id=1100490695309017168))
+        await tree.sync()
         self.synced = True
         print('Bot is Online')
 
@@ -24,16 +24,14 @@ bot = db()
 tree = app_commands.CommandTree(bot)
 
 
-@tree.command(name='help', description='provides information about bot function',
-              guild=discord.Object(id=1100490695309017168))
+@tree.command(name='help', description='provides information about bot function')
 async def self(interaction: discord.Interaction):
     await interaction.response.send_message('Select user in server that you would like the bot to roast.\n'
                                             'A randomly selected phrase will be displayed along with the users name.')
 
 
 @tree.command(name='roast', description='select user in server and a random roast '
-                                        'will be selected for them adn displayed',
-              guild=discord.Object(id=1100490695309017168))
+                                        'will be selected for them adn displayed')
 async def self(interaction: discord.Interaction, user: discord.User):
     roasts = ['puts the milk in before the cereal',
               'sleeps with socks on',
